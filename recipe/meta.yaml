@@ -12,12 +12,14 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  skip: True  # [py<38]
 
 requirements:
   host:
     - python
     - pip
     - wheel
+    - setuptools
   run:
     - python
     - typing-extensions >=4.5.0
@@ -42,4 +44,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - snegireff
+    - step21
